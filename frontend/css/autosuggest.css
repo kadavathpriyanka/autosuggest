@@ -1,0 +1,173 @@
+/* .content{
+    text-align: center;
+}
+
+.pill{
+    position: fixed;
+    top: 5px;
+    right: 10px; /* pushes it left, away from the gear} */
+
+    /* ===== Fonts ===== */
+/* ===== Fonts ===== */
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #11181C;
+  --surface: #1B262C;
+  --border: rgba(217, 164, 65, 0.18);
+  --text-primary: #F1ECE3;
+  --text-secondary: #8FA3AD;
+  --accent: #D9A441;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== Top-right utility cluster ===== */
+.gear {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.gear:hover {
+  background: var(--surface);
+  color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.pill {
+  position: fixed;
+  top: 22px;
+  right: 66px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+}
+
+/* ===== Hero content ===== */
+.content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 90px 24px 40px;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 64px);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.being {
+  color: #A78BFA; /* purple */
+}
+
+.infinity {
+  color: #4FBF73; /* green */
+}
+
+h1::after {
+  content: "∞";
+  display: block;
+  font-size: 0.4em;
+  font-weight: 300;
+  color: var(--accent);
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 16px 0 36px;
+}
+
+/* ===== Merged search bar ===== */
+.search-bar {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.15);
+}
+
+.search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--accent);
+  margin-right: 10px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.search-bar:focus-within .search {
+  transform: scale(1.15);
+  color: var(--accent);
+}
+
+.search-bar input {
+  height: 100%;
+  width: 280px;
+  max-width: 60vw;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  padding: 0;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .pill { font-size: 10px; padding: 5px 10px; right: 56px; }
+  .gear { width: 32px; height: 32px; right: 14px; top: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gear, .search { transition: none; }
+}
