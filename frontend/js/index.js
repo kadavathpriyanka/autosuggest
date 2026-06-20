@@ -1,20 +1,33 @@
-let isMale = true;
 
-function toggleCard()
-{
-    const img = document.querySelector(".card img");
-    const name = document.querySelector(".card h2");
-    const gender = document.querySelector(".card p");
+var users=[
+      {
+        "name" : "JOHN LEAN",
+        "gender" : "male",
+        "image" : "/images/john.png"
+      },
+      {
+        "name" : "PRIYANKA",
+        "gender" : "female",
+        "image" : "/images/jane.png"
+      },
+      {
+         "name" : "MOUNIKA",
+        "gender" : "female",
+        "image" : "/images/woman.png"
+      }
+    ]
+var curId=0;
+function toggle(){
+        //toggle cuid from 0->1 & 1->0
+        curId= (curId+1)%users.length;
+        
+        var user=users[curId];
+        //toggle the rendered user details
+        document.getElementById("user-img").src=user.image;
 
-    if ( isMale ) {
-        img.src = "../images/woman.png"; // female image
-        name.textContent = "Priyanka";
-        gender.textContent = "Female";
-    } else {
-        img.src = "../images/john.png"; // male image
-        name.textContent = "John";
-        gender.textContent = "Male";
-    }
+        //update for name and gender
+        document.getElementById("username").innerText=user.name;
 
-    isMale = !isMale;
+        document.getElementById("usergender").innerText=user.gender;
+
 }
